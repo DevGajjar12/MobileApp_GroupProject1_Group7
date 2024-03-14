@@ -16,13 +16,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.regex.Pattern
 
-data class User(
-    val email: String,
-    val password: String,
-    val firstName: String,
-    val lastName: String,
-    val mobileNo: String
-)
+
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var textView: TextView

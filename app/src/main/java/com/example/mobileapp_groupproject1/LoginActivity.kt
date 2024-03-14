@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
                     progressDialog.dismiss()
                     if (task.isSuccessful) {
                         showToast("Login Successful")
-                        val intent = Intent(applicationContext, CandidateDetails::class.java)
+                        val intent = Intent(applicationContext, HomeActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
