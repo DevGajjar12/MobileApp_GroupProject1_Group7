@@ -35,6 +35,11 @@ class DetailsActivity : AppCompatActivity() {
             intent.putExtra("recruit", recruit)
             startActivity(intent)
         }
+        binding.btnBack?.setOnClickListener {
+            val intent = Intent(this@DetailsActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 }

@@ -44,6 +44,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Connect" />
+        android:layout_marginBottom="124dp"
+        android:text="schedule an appointment with candidate" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="65dp"
+        android:text="Back To Home Page" />
 
 </RelativeLayout>
