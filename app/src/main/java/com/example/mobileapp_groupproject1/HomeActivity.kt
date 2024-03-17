@@ -1,15 +1,20 @@
 package com.example.mobileapp_groupproject1
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mobileapp_groupproject1.Fragment.AboutFragment
+import com.example.mobileapp_groupproject1.Fragment.EventFragment
+import com.example.mobileapp_groupproject1.Fragment.HomeFragment
 import com.google.firebase.database.*
 
-class HomeActivity : AppCompatActivity(), RecruitAdapter.OnItemClickListener {
+class HomeActivity : AppCompatActivity(){
 
     //view created by Krushang
     private lateinit var li_home : LinearLayout
@@ -25,9 +30,6 @@ class HomeActivity : AppCompatActivity(), RecruitAdapter.OnItemClickListener {
     private lateinit var tv_event : TextView
 
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var database: DatabaseReference
-    private lateinit var recruitsList: MutableList<Recruit>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,61 +39,56 @@ class HomeActivity : AppCompatActivity(), RecruitAdapter.OnItemClickListener {
 
         HandleClick()
 
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
 
-        recruitsList = mutableListOf()
-        val adapter = RecruitAdapter(this, recruitsList, this)
-        recyclerView.adapter = adapter
-
-        database = FirebaseDatabase.getInstance().getReference("recruits")
-        database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    recruitsList.clear()
-                    for (recruitSnapshot in snapshot.children) {
-                        val recruit = recruitSnapshot.getValue(Recruit::class.java)
-                        recruit?.let { recruitsList.add(it) }
-                    }
-                    adapter.notifyDataSetChanged()
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })
     }
 
     private fun HandleClick() {
         li_home.setOnClickListener {
-            startActivity(Intent(applicationContext,HomeActivity))
+            replaceFragment(HomeFragment())
+            iv_home.setBackgroundResource(R.drawable.ic_home_active)
+            iv_about.setBackgroundResource(R.drawable.ic_about)
+            iv_event.setBackgroundResource(R.drawable.ic_event)
+
+            tv_home.setTextColor(Color.parseColor("#3F51B5"));
+            tv_about.setTextColor(Color.parseColor("#FF000000"));
+            tv_event.setTextColor(Color.parseColor("#FF000000"));
         }
         li_about.setOnClickListener {
+            replaceFragment(AboutFragment())
+            iv_home.setBackgroundResource(R.drawable.ic_home)
+            iv_about.setBackgroundResource(R.drawable.ic_about_active)
+            iv_event.setBackgroundResource(R.drawable.ic_event)
+
+            tv_home.setTextColor(Color.parseColor("#FF000000"));
+            tv_about.setTextColor(Color.parseColor("#3F51B5"));
+            tv_event.setTextColor(Color.parseColor("#FF000000"));
 
         }
         li_event.setOnClickListener {
+            replaceFragment(EventFragment())
+            iv_home.setBackgroundResource(R.drawable.ic_home)
+            iv_about.setBackgroundResource(R.drawable.ic_about)
+            iv_event.setBackgroundResource(R.drawable.ic_event)
+
+            tv_home.setTextColor(Color.parseColor("#FF000000"));
+            tv_about.setTextColor(Color.parseColor("#FF000000"));
+            tv_event.setTextColor(Color.parseColor("#3F51B5"));
 
         }
-        iv_home.setOnClickListener {
+    }
 
-        }
-        iv_about.setOnClickListener {
+    fun replaceFragment(fragment: Fragment) {
+        // Get a reference to the FragmentManager
+        val fragmentManager = supportFragmentManager
 
-        }
-        iv_event.setOnClickListener {
+        // Start a new FragmentTransaction
+        val fragmentTransaction = fragmentManager.beginTransaction()
 
-        }
-        tv_home.setOnClickListener {
+        // Replace the current fragment with the new fragment
+        fragmentTransaction.replace(R.id.frame_layout, fragment)
 
-        }
-        tv_about.setOnClickListener {
-
-        }
-        tv_event.setOnClickListener {
-
-        }
+        // Commit the FragmentTransaction
+        fragmentTransaction.commit()
     }
 
     //declare All variable created by Krushang
@@ -107,12 +104,7 @@ class HomeActivity : AppCompatActivity(), RecruitAdapter.OnItemClickListener {
         tv_event = findViewById(R.id.tv_event)
     }
 
-    override fun onItemClick(recruit: Recruit) {
-        // Handle item click, navigate to detail activity
-        val intent = Intent(this, DetailsActivity::class.java)
-        intent.putExtra("recruit", recruit)
-        startActivity(intent)
-    }
+
 
 
 }
