@@ -8,17 +8,30 @@
     tools:context=".Fragment.AboutFragment">
 
 
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:justificationMode="inter_word"
-        android:layout_marginTop="10dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="ABOUT US" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/appcolor"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:text="About US"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
 
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:id="@+id/image_view_2"
         android:layout_width="400dp"
         android:layout_height="200dp"

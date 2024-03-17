@@ -42,7 +42,7 @@ class EventFragment : Fragment(), EventAdapter.OnItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = GridLayoutManager(activity,2)
+        recyclerView.layoutManager = GridLayoutManager(activity,3)
 
         eventsList = mutableListOf()
         val adapter = EventAdapter(requireContext(), eventsList, this)
