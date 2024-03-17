@@ -7,39 +7,91 @@
     android:background="@color/white"
     tools:context=".Fragment.AboutFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:justificationMode="inter_word"
-        android:text="jhaskjdf akjssdhaks kjahsdkjh kajasdhkajsashd akjasdhkajssdh kjaashdkjh akjsddhkasjsdh" />
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
-        android:text="jhaskjdf akjssdhaks kjahsdkjh kajasdhkajsashd akjasdhkajssdh kjaashdkjh akjsddhkasjsdh" />
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="ABOUT US" />
+
+
+    <ImageView
+        android:id="@+id/image_view_2"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:src="@drawable/download" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:justificationMode="inter_word"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Welcome to Career Craft" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
-        android:text="jhaskjdf akjssdhaks kjahsdkjh kajasdhkajsashd akjasdhkajssdh kjaashdkjh akjsddhkasjsdh" />
+        android:textSize="14sp"
+        android:text="At Career Craft, we are dedicated to empowering individuals in their professional journey. Whether you're a recent graduate exploring career options or a seasoned professional seeking advancement, Career Craft is here to guide you every step of the way." />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
-        android:text="jhaskjdf akjssdhaks kjahsdkjh kajasdhkajsashd akjasdhkajssdh kjaashdkjh akjsddhkasjsdh" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:text="Our Mission" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
-        android:text="jhaskjdf akjssdhaks kjahsdkjh kajasdhkajsashd akjasdhkajssdh kjaashdkjh akjsddhkasjsdh" />
+        android:textSize="14sp"
+        android:text="Our mission is simple: to provide comprehensive resources, expert guidance, and innovative tools to help individuals navigate the complexities of the modern job market and achieve their career aspirations." />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:text="Our Team" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:textSize="14sp"
+        android:text="Behind Career Craft is a team of dedicated professionals passionate about helping individuals thrive in their careers. With diverse backgrounds in career counseling, human resources, technology, and education, our team is here to provide you with the support and expertise you need to succeed." />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:text="Get Started" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:textSize="14sp"
+        android:text="Ready to take the next step in your career journey? Join Career Craft today and embark on a path to professional fulfillment and success." />
 
 
 </LinearLayout>
